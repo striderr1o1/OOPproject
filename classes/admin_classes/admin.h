@@ -29,7 +29,7 @@ class Admin : public Person{
     Signup getSignup();
     adminMenu getMainMenu();
     virtual ~Admin();
-    
+    //lol
     
 
     
