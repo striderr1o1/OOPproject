@@ -9,6 +9,14 @@
 #include "/home/ranger/Desktop/tech/OOP/project_2/classes/signup.h"
 
 using namespace std;
+
+/*
+Admin---
+       |-Login/Signup
+       |-adminmenu.h
+              |-Admin_setMenu.h
+              |-Admin_reqVendor.h
+*/
 class Admin : public Person{
     private:
 

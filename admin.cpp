@@ -50,5 +50,5 @@ int Admin::id = 0;
      {
         username = "null";
         password = "123";
-        cout << "ADMIN finished";
+       
      }
