@@ -9,7 +9,7 @@ class VendorRequest{
 bool request;
    public:
 VendorRequest();
-void VendorReqTrue();
+void VendorReqTrue(/*vendor passed*/);
 void VendorReqFalse();
 
   
