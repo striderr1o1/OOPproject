@@ -7,10 +7,10 @@ int Admin::id = 0;
         username = "NULL";
         password = "123";
         id++;
-        signup_admin = Signup();
+        signup_admin = AdminSignup();
         MainMenu = adminMenu();
     }
-    Admin::Admin(string UN, string pass, Signup s, adminMenu AM)
+    Admin::Admin(string UN, string pass, AdminSignup s, adminMenu AM)
     {
         username = UN;
         password = pass;
@@ -38,7 +38,7 @@ int Admin::id = 0;
     {
         return id;
     }
-    Signup Admin::getSignup()
+    AdminSignup Admin::getSignup()
      {
         return signup_admin;
      }
@@ -46,6 +46,14 @@ int Admin::id = 0;
      {
         return MainMenu;
      }
+     void Admin::setSignup(AdminSignup x)
+     {
+        signup_admin = x;
+     }
+    void Admin::setMainMenu(adminMenu x)
+    {
+        MainMenu = x;
+    }
      Admin::~Admin()
      {
         username = "null";

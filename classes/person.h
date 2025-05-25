@@ -13,7 +13,10 @@ class Person{
     
     public:
      Person();
-    
-    virtual string getUsername() = 0;
+   
+    virtual string getPass();
+    virtual string getUsername();
+    virtual void setUsername(string x);
+    virtual void setPassword(string p);
 };
 #endif
