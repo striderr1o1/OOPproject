@@ -3,10 +3,10 @@
 #include "ADMIN_setMenu.cpp"
 adminMenu::adminMenu()
 {
-    SM = SetMenu();
+    SM = ModifyMenu();
     Request_vendor = VendorRequest();
 }
- SetMenu adminMenu::getMenuOption()
+ ModifyMenu adminMenu::getMenuOption()
    {
       return SM;
    }

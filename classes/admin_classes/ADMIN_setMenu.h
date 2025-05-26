@@ -4,12 +4,12 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class SetMenu{
+class ModifyMenu{
    private:
    string products[10];
    int prices[10];
    public:
-   SetMenu();
+   ModifyMenu();
    void setMenu();
    void displayMenu();
    string* getProducts();

@@ -8,12 +8,12 @@
 using namespace std;
 class adminMenu{
    private:
-   SetMenu SM;
+   ModifyMenu SM;
    VendorRequest Request_vendor;
    
    public:
    adminMenu();
-   SetMenu getMenuOption();
+   ModifyMenu getMenuOption();
    VendorRequest getVendorRequest();
    
    

@@ -1,6 +1,6 @@
 #include "./classes/admin_classes/ADMIN_setMenu.h"
 
-   SetMenu::SetMenu()
+   ModifyMenu::ModifyMenu()
    {
     for(int i = 0; i < 10;i++)
     {
@@ -8,7 +8,7 @@
         prices[i] = 0;
     }
    }
-   void SetMenu::setMenu()
+   void ModifyMenu::setMenu()
    {
     for(int i = 0; i < 10;i++)
     {
@@ -16,7 +16,7 @@
         cout << "Price: "; cin >> prices[i];
     }
    }
-   void SetMenu::displayMenu()
+   void ModifyMenu::displayMenu()
    {
 for(int i = 0; i < 10;i++)
     {
@@ -24,15 +24,15 @@ for(int i = 0; i < 10;i++)
         cout << "Price: " << prices[i] << endl;
     }
    }
-   string* SetMenu::getProducts()
+   string* ModifyMenu::getProducts()
    {
     return products;
    }
-   int* SetMenu::getPrices()
+   int* ModifyMenu::getPrices()
    {
     return prices;
    }
-   void SetMenu::setProducts()
+   void ModifyMenu::setProducts()
    {
     for(int i = 0; i<10; i++)
     {
@@ -40,7 +40,7 @@ for(int i = 0; i < 10;i++)
         cin >> products[i];
     }
    }
-   void SetMenu::setPrices()
+   void ModifyMenu::setPrices()
    {
  for(int i = 0; i<10; i++)
     {
