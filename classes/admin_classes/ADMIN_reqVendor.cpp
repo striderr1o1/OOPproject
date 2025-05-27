@@ -1,4 +1,4 @@
-#include "./classes/admin_classes/ADMIN_reqVendor.h"
+#include "ADMIN_reqVendor.h"
 
 VendorRequest::VendorRequest()
 {

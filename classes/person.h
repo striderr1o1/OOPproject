@@ -12,8 +12,7 @@ class Person{
     string password;
     
     public:
-     Person();
-   
+    Person();
     virtual string getPass();
     virtual string getUsername();
     virtual void setUsername(string x);

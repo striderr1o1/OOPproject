@@ -1,6 +1,5 @@
-#include "./classes/admin_classes/admin.h"
-#include <iostream>
-using namespace std;
+#include "admin.h"
+
 int Admin::id = 0;
     Admin::Admin()
     {
@@ -54,9 +53,4 @@ int Admin::id = 0;
     {
         MainMenu = x;
     }
-     Admin::~Admin()
-     {
-        username = "null";
-        password = "123";
-       
-     }
+     

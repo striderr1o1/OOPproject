@@ -1,4 +1,4 @@
-#include "./classes/admin_classes/adminmenu.h"
+#include "adminmenu.h"
 #include "ADMIN_reqVendor.cpp"
 #include "ADMIN_setMenu.cpp"
 adminMenu::adminMenu()

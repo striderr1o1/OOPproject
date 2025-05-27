@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <string>
-#include "/home/ranger/Desktop/tech/OOP/project_2/classes/person.h"
+#include "../person.h"
 #include "adminmenu.h"
 #include "adminSignup.h"
 
@@ -17,7 +17,8 @@ Admin---
               |-Admin_setMenu.h
               |-Admin_reqVendor.h
 */
-class Admin : public Person{
+class Admin : public Person
+{
     private:
 
     static int id;
@@ -38,7 +39,7 @@ class Admin : public Person{
     adminMenu getMainMenu();
     void setSignup(AdminSignup x);
     void setMainMenu(adminMenu x);
-    virtual ~Admin();
+    
     //lol
     
 

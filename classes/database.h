@@ -24,6 +24,20 @@ class Database{
         
     }
 
+    void executestatment(const char* sql)
+    {
+        int state = sqlite3_exec(DB, sql, nullptr, nullptr, &errorMsg );
+        if(state == SQLITE_OK)
+        {
+            cerr << "Error occured: " << *errorMsg << endl;
+        }
+        else{
+            cout << "\nSuccessful";
+            
+        }
+        
+    }
+
 
      ~Database() {//closing database
         sqlite3_close(DB);

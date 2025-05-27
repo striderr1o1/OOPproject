@@ -4,16 +4,16 @@
 
 #include <iostream>
 #include <string>
-#include "./classes/signup.h"
-#include "/home/ranger/Desktop/tech/OOP/project_2/signup.cpp"
-#include "./classes/database.h"
+#include "../signup.h"
+
+#include "../database.h"
 using namespace std;
 class AdminSignup: public Signup{
     private:
-    
+     Database Db;
     public:
  AdminSignup();
- AdminSignup(string a, string b);
+ AdminSignup(string a, string b, Database database);
 
 };
 
