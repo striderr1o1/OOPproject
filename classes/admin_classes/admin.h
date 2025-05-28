@@ -7,7 +7,7 @@
 #include "../person.h"
 #include "adminmenu.h"
 #include "adminSignup.h"
-#include "windows.h"
+#include "adminLogin.h"
 
 using namespace std;
 
@@ -25,12 +25,12 @@ class Admin : public Person
     static int id;
     AdminSignup signup_admin;
     adminMenu MainMenu;
-
+    AdminLogin Login_admin;
     protected:
 
     public:
     Admin();
-    Admin(string UN, string pass, AdminSignup& s, adminMenu& AM);
+    Admin(string UN, string pass, AdminSignup& s, adminMenu& AM, AdminLogin& AL);
     string getUsername();
     string getPass();
     void setUsername(string x);
@@ -38,6 +38,7 @@ class Admin : public Person
     int getID();
     AdminSignup getSignup();
     adminMenu getMainMenu();
+    AdminLogin getLogin();
     void setSignup(AdminSignup& x);
     void setMainMenu(adminMenu& x);
     void startAdmin();

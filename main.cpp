@@ -25,7 +25,9 @@ Customer cstmrs[100];
     A1.startAdmin();
     break;
     case 2:
+    //Customer.start()
     case 3:
+    //vendor.start()
     default:
     cout << "GOODbye";
    }

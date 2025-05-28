@@ -15,6 +15,10 @@ class AdminSignup: public Signup{
     public:
  AdminSignup();
  AdminSignup(string a, string b, Database& database, bool ver);
+ bool startSignup();
+ string getUsername();
+ string getPassword();
+ 
 
 };
 
