@@ -4,12 +4,12 @@
 #include <iostream>
 #include <string>
 #include "admin.h"
-
+#include "customer.h"
 using namespace std;
 class Restaurant{
     private:
     Admin ADMIN;
-    //Customer CUSTOMERS[100];
+    Customer CUSTOMERS[100];
     //Vendor VENDOR;
    public:
    //set ADMIN;
