@@ -11,9 +11,10 @@ using namespace std;
 class AdminSignup: public Signup{
     private:
      Database Db;
+     bool verification;
     public:
  AdminSignup();
- AdminSignup(string a, string b, Database database);
+ AdminSignup(string a, string b, Database& database, bool ver);
 
 };
 

@@ -2,16 +2,14 @@
 
 AdminSignup::AdminSignup()
 {
-    NEWUsername = "NULL";
-    NEWPass = "123";
-    cout << "Enter file name: ";
-    string filename;
-    cin >> filename;
-    Db = Database(filename);
+    cout << "Enter username: "; cin >> NEWUsername;
+    cout << "Enter password: "; cin >> NEWPass;
+    verification = false;
 }
-AdminSignup::AdminSignup(string a, string b, Database database)
+AdminSignup::AdminSignup(string a, string b, Database& database, bool ver)
 {
     NEWUsername = a;
     NEWPass = b;
      Db = database;
+     verification = ver;
 }

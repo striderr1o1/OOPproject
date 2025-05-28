@@ -10,20 +10,21 @@ class Database{
     sqlite3* DB;
     char* errorMsg;
     int connection;
+    string statement;
     public:
-    Database(){};
-    Database(string filename)//string 
-    {
-        connection = sqlite3_open16(filename.c_str(), &DB);//string passed to sqlite, along with database
+    Database(){
+        
+        string file = "mynewrms.db";
+        connection = sqlite3_open16(file.c_str(), &DB);//string passed to sqlite, along with database
         if(connection == SQLITE_OK)//returns SQLITE_OK (0) if successful else displays error, if database doesnt exist, its gonna make one
         {
-            cout << "Connection made: " << filename << endl;
+            cout << "Connection made: " << file << endl;
         }
         else{
             cerr << "Error occured" << sqlite3_errmsg(DB) << endl; 
         }
-        
-    }
+    };
+    
 
     void executestatment(const char* sql)
     {

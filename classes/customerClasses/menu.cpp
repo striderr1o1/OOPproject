@@ -17,8 +17,10 @@ Menu::Menu()
  }
  void Menu::addItem(MenuItem& x)
  {
-    itemCount++;
     items[itemCount] = x;
+    itemCount++;
+    
+    
  }
  void Menu::deleteItem(int index)
  {

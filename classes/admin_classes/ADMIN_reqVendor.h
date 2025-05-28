@@ -3,14 +3,21 @@
 
 #include <iostream>
 #include <string>
+#include "customer.h"
+#include "vendor.h"
 using namespace std;
 class VendorRequest{
    private:
 bool request;
+MenuItem RequestedItems[100];
+int quantities[100];
+static int count;
+
    public:
 VendorRequest();
-void VendorReqTrue(/*vendor passed*/);
-void VendorReqFalse();
+void setItems(MenuItem list[], int listcount, int quan[]);
+bool makeRequest(Vendor& v);
+//   void receiveOrdersFromAdmin(string names[], int quantities[], int count);
 
   
 };

@@ -29,7 +29,7 @@ class Admin : public Person
 
     public:
     Admin();
-    Admin(string UN, string pass, AdminSignup s, adminMenu AM);
+    Admin(string UN, string pass, AdminSignup& s, adminMenu& AM);
     string getUsername();
     string getPass();
     void setUsername(string x);
@@ -37,8 +37,8 @@ class Admin : public Person
     int getID();
     AdminSignup getSignup();
     adminMenu getMainMenu();
-    void setSignup(AdminSignup x);
-    void setMainMenu(adminMenu x);
+    void setSignup(AdminSignup& x);
+    void setMainMenu(adminMenu& x);
     
     //lol
     
