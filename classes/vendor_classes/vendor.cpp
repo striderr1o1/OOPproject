@@ -2,16 +2,38 @@
 #include "vendor.h"
 
 using namespace std;
-
-Vendor::Vendor(string user, string pass) {
-    username = user;
-    password = pass;
+Vendor::Vendor()
+{
+    username = "null";
+    password = "null";
+    for(int i = 0; i< MAX_ITEMS; i++)
+    {
+        orderQuantities[i] = 0;
+        suppliedQuantities[i] = 0;
+    }
     orderCount = 0;
     suppliedCount = 0;
 }
+Vendor::Vendor(string user, string pass, int OQuantities[], int Squantities[], MenuItem ordernames[], MenuItem suppliednames[], int OQcount, int SQcount,int Ocount, int Scount ) {
+    username = user;
+    password = pass;
+    orderCount = Ocount;
+    suppliedCount = Scount;
+    for(int i = 0; i < OQcount; i++)
+    {
+        orderQuantities[i] = OQuantities[i];
+        orderNames[i] = ordernames[i];
+    }
+    for(int i = 0; i < SQcount; i++)
+    {
+        suppliedQuantities[i] = Squantities[i];
+        suppliedNames[i] = suppliednames[i];
+    }
+
+}
 
 bool Vendor::login(string user, string pass) {
-    return (user == username && pass == password);
+    return (user == username  && pass == password);
 }
 
 bool Vendor::receiveOrdersFromAdmin(MenuItem list[], int quan[], int cnt) {
