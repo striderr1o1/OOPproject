@@ -52,4 +52,9 @@ int Admin::id = 0;
     {
         MainMenu = x;
     }
+
+    void Admin::startAdmin()
+    {
+        cout << ""
+    }
      

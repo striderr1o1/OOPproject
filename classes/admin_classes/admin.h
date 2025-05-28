@@ -7,6 +7,7 @@
 #include "../person.h"
 #include "adminmenu.h"
 #include "adminSignup.h"
+#include "windows.h"
 
 using namespace std;
 
@@ -39,7 +40,7 @@ class Admin : public Person
     adminMenu getMainMenu();
     void setSignup(AdminSignup& x);
     void setMainMenu(adminMenu& x);
-    
+    void startAdmin();
     //lol
     
 
