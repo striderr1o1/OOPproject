@@ -4,6 +4,9 @@
 #include <sqlite3.h>
 #include <iostream>
 #include <string>
+#include "menu.h"
+#include "menuItem.h"
+
 using namespace std;
 class Database{
     private:
@@ -16,6 +19,9 @@ class Database{
     static int callback(void* NotUsed, int argc, char** argv, char** azColName) ;
     void executestatment(const char* sql);
     void executeStatementStr(string& x);
+
+    void readData(const char* sql);
+    int fetchMenu(Menu& customermenu);
 //one function to execute statements
 //one function read from database
 //others too

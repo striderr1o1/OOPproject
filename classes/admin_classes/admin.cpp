@@ -63,20 +63,20 @@ int Admin::id = 0;
         bool correct = false;
         bool signup = false;
         bool login = false;
-       
+       int option;
         do{
             system("clear");
         cout << "1. Login\n";
         cout << "2. Signup\n";
-        int option;
+        cout << "3. exit\n";
+        
         cout << "option: ";
         cin >> option;
         switch(option)
         {
             case 1://first signup then login
-            if(signup == true)
-            {
-                login = Login_admin.startLogin(signup_admin,db);
+            
+                login = Login_admin.startLogin(db);
                 if(login == true){
                 cout << "\nSuccessfully logged in as " << signup_admin.getUsername() << endl;
                 correct = true;
@@ -89,18 +89,17 @@ int Admin::id = 0;
                 cout << "\nFailed to login.";
                 correct = false;
             }
-            }
-            else
-            cout << "\nSign up first.";
+            
+           
             break;
 
             case 2://signup
-                signup = signup_admin.startSignup();
+                signup_admin.startSignup();
             break;
 
-            default:
+            case 3:
             break;
         }
-    }while(correct == false);
+    }while(option!=3);
     }
      

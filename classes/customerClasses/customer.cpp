@@ -46,18 +46,18 @@ string Customer::getUsername()
     //menu-
     //    |___Display menuitems
     //    |___Make order
-    void Customer::start()
+    void Customer::start(Database& db)
     {system("clear");
         int option;
         do{
         cout << "\nWelcome to Customer";
-        cout << "\nPress 1 to see Menu";
+        cout << "\nPress 1 for Menu + Order";
         cout << "\nPress 2 to go back\n";
         cin >> option;
         switch(option)
         {
             case 1:
-            Customerorder.start();
+            Customerorder.start(db);
             break;
             case 2:
            break;

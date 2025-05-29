@@ -48,17 +48,19 @@ for(int i = 0; i < count;i++)
     count++;
     
    }
-   void ModifyMenu::removeItem()
+void ModifyMenu::removeItem()
    {
     count--;
    }
 
-   void ModifyMenu::sendMenutoCustomer(Customer& c)
+void ModifyMenu::sendMenutoCustomer(Customer& c)
    {
       c.getCustomerOrder().getMenu().getMenufromAdmin(items, count);
       }
 
-      void ModifyMenu::sendMenutoDatabase(Database& db)
+
+
+void ModifyMenu::sendMenutoDatabase(Database& db)
    {
       //db made in main
       const char* sqlStatment = "CREATE TABLE IF NOT EXISTS MenuItems (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, price INTEGER NOT NULL)";
@@ -69,10 +71,15 @@ for(int i = 0; i < count;i++)
          string name = items[i].getName();
          string price = to_string(items[i].getPrice());
          string dataEntry = "INSERT INTO MenuItems (name, price) VALUES ('" + name + "', " + price + ")";
-db.executeStatementStr(dataEntry);
+         db.executeStatementStr(dataEntry);
       }
       }
-   void ModifyMenu::start(Customer& c, Database& d)
+void ModifyMenu::getMenufromDatabase(Database& db)
+{
+   const char* stmnt = "SELECT * FROM MenuItems;";
+   db.readData(stmnt);
+}
+void ModifyMenu::start(Customer& c, Database& d)
    {
       int option;
 int cnt;
@@ -102,8 +109,7 @@ setMenu(cnt);
 sendMenutoDatabase(d);
 break;
     case 2:
-    displayMenu();
-    sendMenutoDatabase(d);
+    this->getMenufromDatabase(d);
     cout << "Press 0 to go back";
    cin >> option2;
    if(option2 == 0)
@@ -126,5 +132,5 @@ break;
 
 }while(option!=0);
 }
-   
-  
+
+

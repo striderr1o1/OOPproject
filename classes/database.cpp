@@ -48,6 +48,55 @@ Database::Database(){
         }
     }
 
+    void Database::readData(const char* sql)
+    {int status;
+        sqlite3_stmt* stmnt;
+        status = sqlite3_prepare_v2(DB, sql, -1, &stmnt, nullptr);
+        if(status != SQLITE_OK)
+        {
+            cout << "Error occured in statement preparation: " << *errorMsg << endl;
+            return;
+        }
+
+        while(sqlite3_step(stmnt) == SQLITE_ROW)
+        {
+            const unsigned char* name = sqlite3_column_text(stmnt, 0);
+            const unsigned char* price = sqlite3_column_text(stmnt, 1);
+
+            cout << "Item Name: " << name << " Price: " << price << endl;
+        }
+        sqlite3_finalize(stmnt);
+    }
+    int Database::fetchMenu(Menu& customermenu)
+    {
+        int status;
+        const char* sql = "SELECT * FROM MenuItems;";
+        sqlite3_stmt* stmnt;
+        status = sqlite3_prepare_v2(DB, sql, -1, &stmnt, nullptr);
+        if(status != SQLITE_OK)
+        {
+            cout << "Error occured in statement preparation: " << *errorMsg << endl;
+            return 0;
+        }
+int counter = 0;
+        while(sqlite3_step(stmnt) == SQLITE_ROW)
+        {counter++;
+            const unsigned char* name = sqlite3_column_text(stmnt, 1);
+            int price = sqlite3_column_int(stmnt, 2);
+            
+            string convertedName = reinterpret_cast<const char*>(name);
+         
+            MenuItem x(convertedName,price);
+            customermenu.addItem(x);
+            
+            
+            //under construction
+            //reinterpret_cast<const char*>(
+        }
+        sqlite3_finalize(stmnt);
+        return counter;
+    }
+
 
      Database::~Database() {//closing database
         if(connection == 0){

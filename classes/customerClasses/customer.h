@@ -3,7 +3,8 @@
 
 #include "../person.h"
 #include "menu.h"
-#include "order.h"       // You'll create an Order class
+#include "order.h" 
+#include "../database.h"      // You'll create an Order class
    
 //customer--
 //          | orders
@@ -24,7 +25,7 @@ public:
     void setCustomerOrders(Order order);
    
     
-   void start();
+   void start(Database& db);
   
 };
 

@@ -3,6 +3,8 @@
 #include "menuItem.h"
 #include "menu.h"
 #include <iostream>
+#include "../database.h"
+#include "unistd.h"
 using namespace std;
 class Order{
 private:
@@ -19,7 +21,7 @@ public:
 	void setMenu(Menu& menu);
 	void displayOrder();
 	double getTotalbill();
-	void start();
+	void start(Database& db);
 
 
 

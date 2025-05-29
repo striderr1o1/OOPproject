@@ -34,7 +34,7 @@ Customer* customers = new Customer[100];
     A1.startAdmin(C1,rdb);
     break;
     case 2:
-    C1.start();
+    C1.start(rdb);
     break;
     case 3:
     //vendor.start()

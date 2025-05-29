@@ -17,8 +17,10 @@ Menu::Menu()
  }
  void Menu::addItem(MenuItem& x)
  {
-    items[itemCount] = x;
     itemCount++;
+    items[itemCount-1].SetName(x.getName());
+    items[itemCount-1].SetPrice(x.getPrice());
+    
     
     
  }

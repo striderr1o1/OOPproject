@@ -21,7 +21,7 @@ class ModifyMenu{
 void addItem(MenuItem x);
 void sendMenutoCustomer(Customer& c);
 void sendMenutoDatabase(Database& db);
-
+void getMenufromDatabase(Database& db);
    void start(Customer& c, Database& d);
   //need to change data type to menu items
 };

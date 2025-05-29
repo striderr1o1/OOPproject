@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include "../signup.h"
-
+#include <fstream>
 #include "../database.h"
 using namespace std;
 class AdminSignup: public Signup{
