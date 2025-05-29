@@ -18,11 +18,11 @@ cout << "Password: ";
 cin >> password;
 if(username == signup.getUsername() && password == signup.getPassword())
 {
-    cout << "Successful";
+    cout << signup.getUsername();
     return true;
 }
 else{
-    cout << "failed";
+    cout << signup.getUsername();
 return false;
 }
 }

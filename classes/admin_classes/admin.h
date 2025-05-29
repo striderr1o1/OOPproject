@@ -8,6 +8,7 @@
 #include "adminmenu.h"
 #include "adminSignup.h"
 #include "adminLogin.h"
+#include <cstdlib>
 
 using namespace std;
 

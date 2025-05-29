@@ -63,8 +63,9 @@ int Admin::id = 0;
         bool correct = false;
         bool signup = false;
         bool login = false;
-        
+       
         do{
+            system("clear");
         cout << "1. Login\n";
         cout << "2. Signup\n";
         int option;
@@ -72,17 +73,31 @@ int Admin::id = 0;
         cin >> option;
         switch(option)
         {
-            case 1:
+            case 1://first signup then login
             if(signup == true)
-            login = this->getLogin().startLogin(this->getSignup());
-
+            {
+                login = Login_admin.startLogin(signup_admin);
+                if(login == true){
+                cout << "\nSuccessfully logged in as " << signup_admin.getUsername() << endl;
+                correct = true;
+                if(correct == true)
+                {//if login successful
+                    MainMenu.StartAdminMenu();
+                }
+                }
+                else{
+                cout << "\nFailed to login.";
+                correct = false;
+            }
+            }
             else
-            cout << "Sign up first.";
+            cout << "\nSign up first.";
             break;
-            case 2:
-            signup = this->getSignup().startSignup();
+
+            case 2://signup
+                signup = signup_admin.startSignup();
             break;
-            
+
             default:
             break;
         }

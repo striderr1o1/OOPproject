@@ -5,6 +5,7 @@
 #include <string>
 #include "customer.h"
 #include "vendor.h"
+#include "menuItem.h"
 using namespace std;
 class VendorRequest{
    private:
@@ -17,6 +18,7 @@ static int count;
 VendorRequest();
 void setItems(MenuItem list[], int listcount, int quan[]);
 bool makeRequest(Vendor& v);
+void start();
 //   void receiveOrdersFromAdmin(string names[], int quantities[], int count);
 
   

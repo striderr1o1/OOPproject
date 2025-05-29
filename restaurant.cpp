@@ -1,5 +1,9 @@
 #include "Restaurant.h"
 int Restaurant::customer_count = 0;
+Restaurant::Restaurant()
+{
+   
+}
  Restaurant::Restaurant(Admin A, Customer Cs[], Vendor v, int cstmr_count)
  {
     ADMIN = A;

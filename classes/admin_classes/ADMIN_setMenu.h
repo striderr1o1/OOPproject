@@ -3,20 +3,24 @@
 
 #include <iostream>
 #include <string>
+#include "menuItem.h"
+#include <unistd.h>
 using namespace std;
 class ModifyMenu{
    private:
-   string products[10];
-   int prices[10];
+  MenuItem items[100];
+   static int count;
    public:
    ModifyMenu();
-   void setMenu();
+   ModifyMenu(MenuItem list[], int count);
+   void setMenu(int cnt);
    void displayMenu();
-   string* getProducts();
-   int* getPrices();
-   void setProducts();
-   void setPrices();
-  
+    void removeItem(int index);
+void addItem(MenuItem x);
+
+
+   void start();
+  //need to change data type to menu items
 };
 
 
