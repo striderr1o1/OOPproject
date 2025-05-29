@@ -59,6 +59,21 @@ Menu Order::getMenu()
 	return customerSideMenu;
 }
 
+void Order::sendSales(double x)
+{
+	fstream salesFile("sales.txt", ios::app);
+	try{
+	if(salesFile.is_open())
+	{
+		salesFile << x << endl;
+		salesFile.close();
+	}
+}catch(exception& e){
+	cout << "Error occured in opening file: " << e.what() << endl;
+}
+	
+}
+
 	 void Order::start(Database& db)
 	 {int option;
 		int option2;
@@ -116,7 +131,7 @@ Menu Order::getMenu()
 			system("clear");
 			cout << "-----Bill-----\n";
 			displayOrder();
-			
+			sendSales(getTotalbill());
 			sleep(3);
 			break;
 			

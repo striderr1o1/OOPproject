@@ -92,7 +92,7 @@ cout << "Modify Customer Menu: ";//send data to database
 cout << "\n1) Set Menu" << endl;
 cout << "\n2) display Menu" << endl;
 cout << "\n3) add Item" << endl;
-cout << "\n4) remove Item" << endl;
+
 cout << "\nEnter 0 to go HOME";
 
 
@@ -118,13 +118,6 @@ break;
     addItem(x);
     sendMenutoDatabase(d);
     break;
-
-    case 4:
-cout << "Enter index: ";
-cin >> index;
-removeItem();
-sendMenutoCustomer(c);
-break;
 default:
 cout << "\nInvalid";
 break;

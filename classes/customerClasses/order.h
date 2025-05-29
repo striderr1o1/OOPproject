@@ -5,6 +5,7 @@
 #include <iostream>
 #include "../database.h"
 #include "unistd.h"
+#include <fstream>
 using namespace std;
 class Order{
 private:
@@ -22,6 +23,8 @@ public:
 	void displayOrder();
 	double getTotalbill();
 	void start(Database& db);
+	void sendSales(double x);
+	
 
 
 

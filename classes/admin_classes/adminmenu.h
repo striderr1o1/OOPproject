@@ -17,7 +17,8 @@ class adminMenu{
    ModifyMenu getMenuOption();
    VendorRequest getVendorRequest();
    void StartAdminMenu(Customer& c, Database& d, Vendor& v);
-   
+    double getTotalSales();
+    
    
    
   
