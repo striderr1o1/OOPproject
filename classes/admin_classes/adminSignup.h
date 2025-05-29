@@ -7,6 +7,7 @@
 #include "../signup.h"
 #include <fstream>
 #include "../database.h"
+#include <unistd.h>
 using namespace std;
 class AdminSignup: public Signup{
     private:

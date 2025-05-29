@@ -31,15 +31,15 @@ Customer* customers = new Customer[100];
    switch(option)
    {
     case 1:
-    A1.startAdmin(C1,rdb);
+    A1.startAdmin(C1,rdb, V1);
     break;
     case 2:
     C1.start(rdb);
     break;
     case 3:
-    //vendor.start()
+    V1.start();
     default:
-    cout << "GOODbye";
+    cout << "\nGOODbye\n";
    }
 }while(option!=0);
 }

@@ -16,7 +16,7 @@ class adminMenu{
    adminMenu();
    ModifyMenu getMenuOption();
    VendorRequest getVendorRequest();
-   void StartAdminMenu(Customer& c, Database& d);
+   void StartAdminMenu(Customer& c, Database& d, Vendor& v);
    
    
    

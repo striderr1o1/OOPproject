@@ -85,7 +85,7 @@ Menu Order::getMenu()
 			cout << "Enter item name: ";
 			cin >> itemName;
 			
-			for(int i = 0; i < sizeof(customerSideMenu.getitemsList()); i++)
+			for(int i = 0; i <= sizeof(customerSideMenu.getitemsList()); i++)
 			{
 				
 				if (customerSideMenu.getitemsList()[i].getName() == itemName){

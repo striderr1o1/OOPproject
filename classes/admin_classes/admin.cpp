@@ -58,7 +58,7 @@ int Admin::id = 0;
         MainMenu = x;
     }
 
-    void Admin::startAdmin(Customer& c, Database& db)
+    void Admin::startAdmin(Customer& c, Database& db, Vendor& v)
     {
         bool correct = false;
         bool signup = false;
@@ -82,11 +82,11 @@ int Admin::id = 0;
                 correct = true;
                 if(correct == true)
                 {//if login successful
-                    MainMenu.StartAdminMenu(c, db);
+                    MainMenu.StartAdminMenu(c, db, v);
                 }
                 }
                 else{
-                cout << "\nFailed to login.";
+                cout << "\nFailed to login.\n";
                 correct = false;
             }
             

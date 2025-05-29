@@ -43,7 +43,7 @@ class Admin : public Person
     AdminLogin getLogin();
     void setSignup(AdminSignup& x);
     void setMainMenu(adminMenu& x);
-    void startAdmin(Customer& c, Database& db);
+    void startAdmin(Customer& c, Database& db, Vendor& v);
     //lol
     
 

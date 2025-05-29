@@ -18,11 +18,9 @@ static int count;
 VendorRequest();
 void setItems(MenuItem list[], int listcount, int quan[]);
 bool makeRequest(Vendor& v);
-void start();
-//   void receiveOrdersFromAdmin(string names[], int quantities[], int count);
+void start(Vendor& v);
+//  void receiveOrdersFromAdmin(string names[], int quantities[], int count);
 
   
 };
-
-
 #endif

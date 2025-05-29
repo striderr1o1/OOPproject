@@ -3,14 +3,18 @@
 Database::Database(){
         
         string file = "restaurant.db";
+        try{
         connection = sqlite3_open(file.c_str(), &DB);//string passed to sqlite, along with database
         if(connection == SQLITE_OK)//returns SQLITE_OK (0) if successful else displays error, if database doesnt exist, its gonna make one
         {
             cout << "Connection made: " << file << endl;
         }
-        else{
-            cerr << "Error occured during connection: " << sqlite3_errmsg(DB) << endl; 
-        }
+        
+    }
+    catch(exception& e)
+    {
+        cout << "Error occured while connecting to SQlite: " << e.what() << endl;
+    }
     };
 
      int Database::callback(void* NotUsed, int argc, char** argv, char** azColName) {
@@ -23,7 +27,7 @@ Database::Database(){
     
 
     void Database::executestatment(const char* sql)
-    {
+    {try{
         int state = sqlite3_exec(DB, sql, callback, nullptr, &errorMsg );
         if(state != SQLITE_OK)
         {
@@ -33,11 +37,17 @@ Database::Database(){
             cout << "\nSuccessful 1";
             
         }
+    }catch(exception& e)
+    {
+        cout << "Error occured while executing const char* sql: " << e.what() << endl;
+    }
         
     }
     void Database::executeStatementStr(string& x)
     {
-        int state = sqlite3_exec(DB, x.c_str(), 0, 0, &errorMsg );
+        
+        try{
+            int state = sqlite3_exec(DB, x.c_str(), 0, 0, &errorMsg );
         if(state != SQLITE_OK)
         {
             cerr << "Error occured 2: " << *errorMsg << endl;
@@ -46,6 +56,10 @@ Database::Database(){
             cout << "\nSuccessful 2";
             
         }
+    }catch(exception& e)
+    {
+        cout << "Error occured in executing string Sql: " << e.what() << endl;
+    }
     }
 
     void Database::readData(const char* sql)
@@ -60,8 +74,8 @@ Database::Database(){
 
         while(sqlite3_step(stmnt) == SQLITE_ROW)
         {
-            const unsigned char* name = sqlite3_column_text(stmnt, 0);
-            const unsigned char* price = sqlite3_column_text(stmnt, 1);
+            const unsigned char* name = sqlite3_column_text(stmnt, 1);
+            const unsigned char* price = sqlite3_column_text(stmnt, 2);
 
             cout << "Item Name: " << name << " Price: " << price << endl;
         }

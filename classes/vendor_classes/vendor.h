@@ -29,6 +29,7 @@ public:
     void viewOrders();
     void supplyItems();
     void showSuppliedItems();
+    void start();
 };
 
 #endif

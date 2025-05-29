@@ -60,7 +60,7 @@ bool AdminSignup::startSignup()
             return false;
         }
     }
- 
+
 string AdminSignup::getUsername()
 {
     return NEWUsername;

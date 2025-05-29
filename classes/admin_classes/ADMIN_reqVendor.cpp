@@ -21,7 +21,7 @@ request = v.receiveOrdersFromAdmin(RequestedItems, quantities, count);
 return request;
 }
 
-void VendorRequest::start()
+void VendorRequest::start(Vendor& v)
 {int itemcount;
     string name;
     int price;
@@ -44,6 +44,7 @@ void VendorRequest::start()
         temp->SetPrice(price);
     }
     setItems(temp, itemcount, tempquantity);
+    makeRequest(v);
 }while(itemcount < 0 && itemcount > 100);
 }
    

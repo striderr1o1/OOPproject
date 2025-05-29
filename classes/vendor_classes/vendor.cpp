@@ -4,8 +4,8 @@
 using namespace std;
 Vendor::Vendor()
 {
-    username = "null";
-    password = "null";
+    username = "vendor_1";
+    password = "vendor123";
     for(int i = 0; i< MAX_ITEMS; i++)
     {
         orderQuantities[i] = 0;
@@ -109,4 +109,10 @@ void Vendor::showSuppliedItems() {
             cout << i + 1 << ". " << suppliedNames[i].getName() << " - Quantity: " << suppliedQuantities[i] << "\n";
         }
     }
+}
+void Vendor::start()
+{
+    system("clear");
+    int option;
+    showMenu();
 }
