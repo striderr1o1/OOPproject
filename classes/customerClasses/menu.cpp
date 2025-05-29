@@ -24,7 +24,8 @@ Menu::Menu()
  }
  void Menu::deleteItem(int index)
  {
-    items[index] = MenuItem();
+    items[index].SetName("NULL");
+    items[index].SetPrice(0);
     itemCount--;
  }
   MenuItem Menu::getItem(int index)
@@ -52,4 +53,24 @@ Menu::Menu()
                 items[i] = list[i];
             }
         }
+    }
+
+    void Menu::getMenufromAdmin(MenuItem itm[], int cnt)
+     {
+        itemCount = cnt;
+        for(int i = 0; i < itemCount; i++)
+        {
+            string name;
+            int price;
+            name = itm[i].getName();
+            items[i].SetName(name);
+            price = itm[i].getPrice();
+            items[i].SetPrice(price);
+        }
+     }
+    void Menu::start()
+    {
+        system("clear");
+        displayItems();
+        
     }

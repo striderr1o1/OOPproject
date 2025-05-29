@@ -14,7 +14,7 @@ adminMenu::adminMenu()
       return Request_vendor;
    }
 
- void adminMenu::StartAdminMenu()
+ void adminMenu::StartAdminMenu(Customer& c, Database& d)
  {
    int option;
    do{
@@ -26,7 +26,7 @@ cout << "\nselect: "; cin >> option;
    switch(option)
    {
       case 1:
-      SM.start();
+      SM.start(c, d);
       break;
       case 2:
       Request_vendor.start();

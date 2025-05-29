@@ -58,7 +58,7 @@ int Admin::id = 0;
         MainMenu = x;
     }
 
-    void Admin::startAdmin()
+    void Admin::startAdmin(Customer& c, Database& db)
     {
         bool correct = false;
         bool signup = false;
@@ -76,13 +76,13 @@ int Admin::id = 0;
             case 1://first signup then login
             if(signup == true)
             {
-                login = Login_admin.startLogin(signup_admin);
+                login = Login_admin.startLogin(signup_admin,db);
                 if(login == true){
                 cout << "\nSuccessfully logged in as " << signup_admin.getUsername() << endl;
                 correct = true;
                 if(correct == true)
                 {//if login successful
-                    MainMenu.StartAdminMenu();
+                    MainMenu.StartAdminMenu(c, db);
                 }
                 }
                 else{

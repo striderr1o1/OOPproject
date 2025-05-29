@@ -48,21 +48,40 @@ for(int i = 0; i < count;i++)
     count++;
     
    }
-   void ModifyMenu::removeItem(int index)
+   void ModifyMenu::removeItem()
    {
-    items[index] = MenuItem();
     count--;
    }
-   void ModifyMenu::start()
+
+   void ModifyMenu::sendMenutoCustomer(Customer& c)
+   {
+      c.getCustomerOrder().getMenu().getMenufromAdmin(items, count);
+      }
+
+      void ModifyMenu::sendMenutoDatabase(Database& db)
+   {
+      //db made in main
+      const char* sqlStatment = "CREATE TABLE IF NOT EXISTS MenuItems (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, price INTEGER NOT NULL)";
+      db.executestatment(sqlStatment);
+
+      for(int i = 0; i < count; i++)
+      {
+         string name = items[i].getName();
+         string price = to_string(items[i].getPrice());
+         string dataEntry = "INSERT INTO MenuItems (name, price) VALUES ('" + name + "', " + price + ")";
+db.executeStatementStr(dataEntry);
+      }
+      }
+   void ModifyMenu::start(Customer& c, Database& d)
    {
       int option;
 int cnt;
 int index;
-
+int option2;
 MenuItem x;
       do{
       system("clear");
-cout << "Modify Customer Menu: ";
+cout << "Modify Customer Menu: ";//send data to database
 cout << "\n1) Set Menu" << endl;
 cout << "\n2) display Menu" << endl;
 cout << "\n3) add Item" << endl;
@@ -80,28 +99,32 @@ switch(option)
 cout << "Enter Item count: ";
 cin >> cnt;
 setMenu(cnt);
+sendMenutoDatabase(d);
 break;
     case 2:
     displayMenu();
-    sleep(2000);
+    sendMenutoDatabase(d);
+    cout << "Press 0 to go back";
+   cin >> option2;
+   if(option2 == 0)
    break;
     case 3: 
     addItem(x);
+    sendMenutoDatabase(d);
     break;
+
     case 4:
 cout << "Enter index: ";
 cin >> index;
-removeItem(index);
-break;
-case 5:
+removeItem();
+sendMenutoCustomer(c);
 break;
 default:
 cout << "\nInvalid";
 break;
 }
-if(option == 5)
-break;
-}while(option < 0 && option <= 4);
-   }
+
+}while(option!=0);
+}
    
   

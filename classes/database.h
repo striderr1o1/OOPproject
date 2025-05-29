@@ -12,40 +12,17 @@ class Database{
     int connection;
     string statement;
     public:
-    Database(){
-        
-        string file = "mynewrms.db";
-        connection = sqlite3_open16(file.c_str(), &DB);//string passed to sqlite, along with database
-        if(connection == SQLITE_OK)//returns SQLITE_OK (0) if successful else displays error, if database doesnt exist, its gonna make one
-        {
-            cout << "Connection made: " << file << endl;
-        }
-        else{
-            cerr << "Error occured" << sqlite3_errmsg(DB) << endl; 
-        }
-    };
-    
-
-    void executestatment(const char* sql)
-    {
-        int state = sqlite3_exec(DB, sql, nullptr, nullptr, &errorMsg );
-        if(state == SQLITE_OK)
-        {
-            cerr << "Error occured: " << *errorMsg << endl;
-        }
-        else{
-            cout << "\nSuccessful";
-            
-        }
-        
-    }
-
-
-     ~Database() {//closing database
-        if(connection == 0){
-        sqlite3_close(DB);
-        cout << "Database closed.\n";}
-    }
+    Database();
+    static int callback(void* NotUsed, int argc, char** argv, char** azColName) ;
+    void executestatment(const char* sql);
+    void executeStatementStr(string& x);
+//one function to execute statements
+//one function read from database
+//others too
+//will add database functionality in admin, he will choose items for customer, items executed
+//to database using one of the functions made here. Customer will pick items -->member function
+//picks data from database
+     ~Database();
 };
 
 

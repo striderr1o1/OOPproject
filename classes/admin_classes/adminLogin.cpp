@@ -10,7 +10,7 @@ AdminLogin::AdminLogin(string u, string pass)
     username = u;
     password = pass;
 }
-bool AdminLogin::startLogin(AdminSignup signup)
+bool AdminLogin::startLogin(AdminSignup signup, Database& db)
 {
 cout << "Username: ";
 cin >> username;

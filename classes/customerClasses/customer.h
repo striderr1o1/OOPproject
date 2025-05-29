@@ -12,22 +12,19 @@
 //               |_______menuItems
 class Customer : public Person {
 private:
-    Order orders[10];
-    Menu CustomersideMenu;   
-    static int orderCount;
+    Order Customerorder;
 public:
     Customer();
-    Customer(Order orderlist[], Menu custmenu, int OC);
+    Customer(Order order);
     string getUsername();
     string getPass();
     void setUsername(string x);
     void setPassword(string p);
-    Order* getCustomerOrders();
-    void setCustomerOrders(Order orderlists[], int count);
-    int getOrdercount();
-    void setCustomerMenu(Menu& mnu);
-    Menu getCustomerMenu();
+    Order getCustomerOrder();
+    void setCustomerOrders(Order order);
    
+    
+   void start();
   
 };
 

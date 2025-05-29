@@ -16,7 +16,7 @@ class AdminLogin{
     public:
     AdminLogin();
     AdminLogin(string u, string pass);
-    bool startLogin(AdminSignup signup);
+    bool startLogin(AdminSignup signup, Database& d);
  
  
 

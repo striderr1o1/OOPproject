@@ -1,54 +1,31 @@
 #include "customer.h"
 
-int Customer::orderCount = 0;
+
 Customer::Customer()
 {
-for(int i = 0;i < 10 ;i++)
-{
-    orders[i] = Order();
-}
-CustomersideMenu = Menu();
-orderCount = 0;
+
 }
 
-Customer::Customer(Order orderlist[], Menu custmenu, int OC)
+Customer::Customer(Order order)
 {
-orderCount = OC;
-for(int i = 0; i < 10; i++)
-{
-    orders[i] = Order();
-}
-CustomersideMenu = custmenu;
+
+Customerorder = order;
+
 }
 
- Order* Customer::getCustomerOrders()
+ Order Customer::getCustomerOrder()
  {
-    return orders;
+    return Customerorder;
  }
 
-void Customer::setCustomerOrders(Order orderlists[], int count)
+void Customer::setCustomerOrders(Order order)
 {
-    if(count <= 10)
-    {orderCount = count;
-        for(int i = 0; i < count; i++)
-        {
-            orders[i] = orderlists[i];
-        }
-    }
+    Customerorder = order;
     
 }
-int Customer::getOrdercount()
-{
-    return orderCount;
-}
-void Customer::setCustomerMenu(Menu& mnu)
-{
-    CustomersideMenu = mnu;
-}
-Menu Customer::getCustomerMenu()
-{
-    return CustomersideMenu;
-}
+
+
+
 string Customer::getUsername()
     {
         return username;
@@ -64,4 +41,28 @@ string Customer::getUsername()
     void Customer::setPassword(string p)
     {
         password = p;
+    }
+     
+    //menu-
+    //    |___Display menuitems
+    //    |___Make order
+    void Customer::start()
+    {system("clear");
+        int option;
+        do{
+        cout << "\nWelcome to Customer";
+        cout << "\nPress 1 to see Menu";
+        cout << "\nPress 2 to go back\n";
+        cin >> option;
+        switch(option)
+        {
+            case 1:
+            Customerorder.start();
+            break;
+            case 2:
+           break;
+            default:
+            break;
+        }
+    }while(option < 1 && option > 2);
     }

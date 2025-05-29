@@ -27,6 +27,7 @@ class Admin : public Person
     AdminSignup signup_admin;
     adminMenu MainMenu;
     AdminLogin Login_admin;
+    
     protected:
 
     public:
@@ -42,7 +43,7 @@ class Admin : public Person
     AdminLogin getLogin();
     void setSignup(AdminSignup& x);
     void setMainMenu(adminMenu& x);
-    void startAdmin();
+    void startAdmin(Customer& c, Database& db);
     //lol
     
 

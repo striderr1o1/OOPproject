@@ -17,7 +17,8 @@ public:
     void displayItems();
     MenuItem* getitemsList();
 void setitemsList(MenuItem list[], int count);
-    
+void start();
+void getMenufromAdmin(MenuItem itm[], int cnt);
 
 };
 

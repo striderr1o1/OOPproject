@@ -4,6 +4,7 @@
 #include <iostream>
 #include "ADMIN_setMenu.h"
 #include "ADMIN_reqVendor.h"
+#include "../database.h"
 #include <string>
 using namespace std;
 class adminMenu{
@@ -15,7 +16,7 @@ class adminMenu{
    adminMenu();
    ModifyMenu getMenuOption();
    VendorRequest getVendorRequest();
-   void StartAdminMenu();
+   void StartAdminMenu(Customer& c, Database& d);
    
    
    
