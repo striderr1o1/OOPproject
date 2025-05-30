@@ -43,3 +43,13 @@ Customer* customers = new Customer[100];
    }
 }while(option!=0);
 }
+//A1.startAdmin takes to admin.cpp. admin.cpp manages login signup. If successful
+//it takes to adminmenu.cpp. And further its divided into SM (setmenu.cpp) and req_vendor.cpp.
+
+//C1.start() takes to customer.cpp. It manages the customer user flow.
+//customer.cpp goes to order.cpp
+//order.cpp gives access to order + showing food menu, and it managed using switch statement
+
+//V1.start() goes to vendor.cpp. Vendor.cpp has showMenu() function which is called
+//there.
+
